@@ -6,7 +6,14 @@ using static UnityEngine.InputSystem.InputAction;
 public class BaseCharacterController : MonoBehaviour
 {
     private Vector2 movementInput;
-    [SerializeField] float movementSpeed;
+    [SerializeField] private float movementSpeed;
+    [Range(0,1)][SerializeField] private float slowedFactor;
+    private bool isSlowed;
+
+    private void Start()
+    {
+        isSlowed = false;
+    }
 
     /// <summary>
     /// Movement is called by the input system when player moves the joystick or presses the arrow keys
@@ -22,6 +29,27 @@ public class BaseCharacterController : MonoBehaviour
     //This is now a FIXEDupdate
     private void FixedUpdate()
     {
-        transform.Translate(new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * movementSpeed);
+        //var actualMovementSpeed = isSlowed ? movementSpeed * slowedFactor : movementSpeed;
+        var actualMovementSpeed = movementSpeed;
+        if(isSlowed) actualMovementSpeed *= slowedFactor;
+
+        transform.Translate(new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * actualMovementSpeed);
+    }
+    
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Swamp"))
+        {
+            isSlowed = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Swamp"))
+        {
+            isSlowed = false;
+        }
+
     }
 }
