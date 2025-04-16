@@ -19,9 +19,9 @@ public class BaseCharacterController : MonoBehaviour
 
     }
 
-    //This is a update
-    private void Update()
+    //This is now a FIXEDupdate
+    private void FixedUpdate()
     {
-        transform.position += new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * movementSpeed;
+        transform.Translate(new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * movementSpeed);
     }
 }
