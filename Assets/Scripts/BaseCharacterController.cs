@@ -35,7 +35,14 @@ public class BaseCharacterController : MonoBehaviour
 
         transform.Translate(new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * actualMovementSpeed);
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("FightEncounter"))
+        {
+            CheckForEncounter();
+        }
+    }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Swamp"))
@@ -60,5 +67,10 @@ public class BaseCharacterController : MonoBehaviour
         {
             isSlowed = false;
         }
+    }
+
+    private void CheckForEncounter()
+    {
+        FightManager.Instance.CheckForEncounter();
     }
 }
