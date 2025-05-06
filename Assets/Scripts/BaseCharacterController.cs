@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using static UnityEngine.InputSystem.InputAction;
 
 public class BaseCharacterController : MonoBehaviour
@@ -9,10 +10,25 @@ public class BaseCharacterController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [Range(0,1)][SerializeField] private float slowedFactor;
     private bool isSlowed;
+    private bool isPlayerInBattle; 
+    private Vector3Int currentPosition;
+    private Vector3Int lastEncounterPosition;
+
+    public Tilemap tilemap
+    {
+
+        get
+        {
+            if (m_tilemap == null) m_tilemap = FindObjectOfType<Tilemap>();
+            return m_tilemap;
+        }
+    }
+    private Tilemap m_tilemap;
 
     private void Start()
     {
         isSlowed = false;
+        isPlayerInBattle = false;
     }
 
     /// <summary>
@@ -29,31 +45,29 @@ public class BaseCharacterController : MonoBehaviour
     //This is now a FIXEDupdate
     private void FixedUpdate()
     {
+        if (isPlayerInBattle) return;
         //var actualMovementSpeed = isSlowed ? movementSpeed * slowedFactor : movementSpeed;
         var actualMovementSpeed = movementSpeed;
         if(isSlowed) actualMovementSpeed *= slowedFactor;
 
         transform.Translate(new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * actualMovementSpeed);
-    }
+        currentPosition = tilemap.WorldToCell(transform.position);    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("FightEncounter"))
-        {
-            CheckForEncounter();
-        }
-    }
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Swamp"))
+        if (col.gameObject.CompareTag("Swamp") || col.gameObject.CompareTag("HighGrass"))
         {
             isSlowed = true;
         }
-
-        else if (col.gameObject.CompareTag("HighGrass"))
+  
+        else if(col.gameObject.CompareTag("FightEncounter"))
         {
-            isSlowed = true;
-        }   
+            if (currentPosition != lastEncounterPosition)
+            {
+                lastEncounterPosition = currentPosition;
+                isPlayerInBattle = FightManager.Instance.CheckForEncounter();
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
@@ -67,6 +81,7 @@ public class BaseCharacterController : MonoBehaviour
         {
             isSlowed = false;
         }
+
     }
 
     private void CheckForEncounter()
