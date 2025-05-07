@@ -10,7 +10,7 @@ public class BaseCharacterController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [Range(0,1)][SerializeField] private float slowedFactor;
     private bool isSlowed;
-    private bool isPlayerInBattle; 
+    private bool isPlayerPaused; 
     private Vector3Int currentPosition;
     private Vector3Int lastEncounterPosition;
 
@@ -28,7 +28,7 @@ public class BaseCharacterController : MonoBehaviour
     private void Start()
     {
         isSlowed = false;
-        isPlayerInBattle = false;
+        isPlayerPaused = false;
     }
 
     /// <summary>
@@ -45,7 +45,7 @@ public class BaseCharacterController : MonoBehaviour
     //This is now a FIXEDupdate
     private void FixedUpdate()
     {
-        if (isPlayerInBattle) return;
+        if (isPlayerPaused) return;
         //var actualMovementSpeed = isSlowed ? movementSpeed * slowedFactor : movementSpeed;
         var actualMovementSpeed = movementSpeed;
         if(isSlowed) actualMovementSpeed *= slowedFactor;
@@ -65,7 +65,8 @@ public class BaseCharacterController : MonoBehaviour
             if (currentPosition != lastEncounterPosition)
             {
                 lastEncounterPosition = currentPosition;
-                isPlayerInBattle = FightManager.Instance.CheckForEncounter();
+                // is player paused wartet auf eine Antwort von function checkForEncounter in FightManager
+                isPlayerPaused = FightManager.Instance.CheckForEncounter(); 
             }
         }
     }
