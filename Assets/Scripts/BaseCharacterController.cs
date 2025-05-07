@@ -65,8 +65,7 @@ public class BaseCharacterController : MonoBehaviour
             if (currentPosition != lastEncounterPosition)
             {
                 lastEncounterPosition = currentPosition;
-                // is player paused wartet auf eine Antwort von function checkForEncounter in FightManager
-                isPlayerPaused = FightManager.Instance.CheckForEncounter(); 
+                PausePlayer(FightManager.Instance.CheckForEncounter(this)); // Check if the player is in a fight encounter area
             }
         }
     }
@@ -85,8 +84,8 @@ public class BaseCharacterController : MonoBehaviour
 
     }
 
-    private void CheckForEncounter()
+    public void PausePlayer(bool isPaused)
     {
-        FightManager.Instance.CheckForEncounter();
+        isPlayerPaused = isPaused;
     }
 }

@@ -4,22 +4,14 @@ using UnityEngine;
 
 public class CharacterStatsManager : MonoBehaviour
 {
-
     public static CharacterStatsManager Instance { get; private set; }
-    [SerializeField] private int ExperiencePoints;
-    [SerializeField] private int Level;
-    [SerializeField] private int Health;
-    [SerializeField] private int MaxHealth;
-    // vorhanden/ausgerüstet? ja/nein
-    private Dictionary<string, bool> equipment;
-    // wie viele? z.b. 5 Äpfel
-    private Dictionary<string, int> items;
+    public Dictionary<string, BattleCharacter> characters { get; private set; }
+    public Dictionary<string, bool> equipment { get; private set; }
+    public Dictionary<string, int> items { get; private set; }
 
 
-    // Start is called before the first frame update
     void Start()
     {
-    
         if (Instance == null)
         {
             Instance = this;
@@ -30,18 +22,17 @@ public class CharacterStatsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-     
     }
 
     private void Load()
     {
-        ExperiencePoints = 0;
-        Level = 1;
-        Health = 100;
-        MaxHealth = 100;
+        characters = new Dictionary<string, BattleCharacter>
+        {
+            { "Warrior", new Warrior() },
+            { "Mage", new Mage() },
+        };
 
         equipment = new Dictionary<string, bool>();
         items = new Dictionary<string, int>();
     }
-
 }

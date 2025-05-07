@@ -3546,14 +3546,14 @@ RectTransform:
   m_GameObject: {fileID: 425800558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99, y: 0.96, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1861755175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 375, y: 86.757}
+  m_AnchoredPosition: {x: 372, y: 86.757}
   m_SizeDelta: {x: 749.99, y: 526.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425800560
@@ -3709,6 +3709,7 @@ GameObject:
   - component: {fileID: 772941260}
   - component: {fileID: 772941259}
   - component: {fileID: 772941262}
+  - component: {fileID: 772941263}
   m_Layer: 0
   m_Name: PersistanceManager
   m_TagString: Untagged
@@ -3728,7 +3729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4bd0789f80c084abca0610a9d3cc80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chnaceToEncounter: 25
+  chanceToEncounter: 25
   fightCanvas: {fileID: 1386115418}
 --- !u!114 &772941260
 MonoBehaviour:
@@ -3770,10 +3771,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5389ba14ef979bd4cbd6c4abc4550b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExperiencePoints: 0
-  Level: 0
-  Health: 0
-  MaxHealth: 0
+--- !u!114 &772941263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772941258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2e72b6c243de04984828c54aea7faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleCharacterSpawnPoint: {fileID: 1719177830}
+  spawnableBattleCharacters: {fileID: 1125952034691420087, guid: cdaf4d9105ee173499c95598f867a029,
+    type: 3}
 --- !u!1 &814558377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3801,14 +3813,14 @@ RectTransform:
   m_GameObject: {fileID: 814558377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1861755175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: -263.24}
+  m_AnchoredPosition: {x: -375, y: -260}
   m_SizeDelta: {x: 750, y: 173.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814558379
@@ -30768,7 +30780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386115419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30864,7 +30876,7 @@ GameObject:
   - component: {fileID: 1663214313}
   - component: {fileID: 1663214312}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: PlayerButtons(1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30879,14 +30891,14 @@ RectTransform:
   m_GameObject: {fileID: 1663214310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.986958, y: 1.0071, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1861755175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 375, y: -263.24}
+  m_AnchoredPosition: {x: 372, y: -260}
   m_SizeDelta: {x: 750, y: 173.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663214312
@@ -30954,7 +30966,7 @@ RectTransform:
   m_GameObject: {fileID: 1719177829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 0.9603, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1861755175}

@@ -5,9 +5,11 @@ public class FightManager : MonoBehaviour
 {
     // kann von überall zugreifen aber nur hier bearbeiten
     public static FightManager Instance { get; private set; }
-    [Range(0, 100), SerializeField] private int chnaceToEncounter;
+    [Range(0, 100), SerializeField] private int chanceToEncounter;
     [SerializeField] GameObject fightCanvas; 
     private bool isFightActive;
+    private BaseCharacterController characterController;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +26,11 @@ public class FightManager : MonoBehaviour
         isFightActive = false;
     }
     
-    public bool CheckForEncounter()
+    public bool CheckForEncounter(BaseCharacterController characterController)
     {
-        // Check if the player is in a fight encounter area
-        if (Random.Range(0, 100) < chnaceToEncounter)
+        this.characterController = characterController;
+        if (Random.Range(0, 100) < chanceToEncounter)
         {
-            // Encounter
             StartFight();
         }
         return isFightActive;
@@ -39,24 +40,23 @@ public class FightManager : MonoBehaviour
     private void StartFight()
         
     {
-        // Pause the game
-        fightCanvas.SetActive(true);
-        isFightActive = true;
         StartCoroutine(FightCoroutine());
     }
 
     private IEnumerator FightCoroutine() //BSP.: vor der while wie viele Gegener, während Kampfberechnung, nach wie viel Belohnung
     {
+        isFightActive = true;
+        fightCanvas.SetActive(isFightActive);
         // load chars
-         // LoadCharacter();
+        // LoadCharacter();
         // load random enemies
-            // LoadRandomEnemies();
+        // LoadRandomEnemies();
         // load items
-            // LoadItems();
+        // LoadItems();
         // load backgroundImages
         // load music
         // load UI
-            // LoadBackgroundImage Music UI();
+        // LoadBackgroundImage Music UI();
 
         /* while(transition) {
          * 
@@ -77,6 +77,9 @@ public class FightManager : MonoBehaviour
 
         // End the fight an gain XP an gold
         // level up?
+        fightCanvas.SetActive(isFightActive);
+        characterController.PausePlayer(isFightActive);
+
     }
 
     // private void LoadCharacter()

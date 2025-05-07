@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
 
-    private static SpawnManager instance;
+    public static SpawnManager instance;
     [SerializeField] private Transform battleCharacterSpawnPoint;
+    [SerializeField] private GameObject spawnableBattleCharacters;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,9 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public void SpawnObject(GameObject go)
+    public void SpawnObject()
     {
-        Instantiate(go, battleCharacterSpawnPoint);
+        Instantiate(spawnableBattleCharacters, battleCharacterSpawnPoint);
     }
 
 }
