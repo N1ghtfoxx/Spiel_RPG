@@ -48,13 +48,17 @@ public class FightManager : MonoBehaviour
     private IEnumerator FightCoroutine() //BSP.: vor der while wie viele Gegener, während Kampfberechnung, nach wie viel Belohnung
     {
         // load chars
+         // LoadCharacter();
         // load random enemies
+            // LoadRandomEnemies();
         // load items
+            // LoadItems();
         // load backgroundImages
         // load music
         // load UI
+            // LoadBackgroundImage Music UI();
 
-        /*while(transition( {
+        /* while(transition) {
          * 
          * DoStuff();
          * yield return new WaitForEndOfFrame();
@@ -75,4 +79,27 @@ public class FightManager : MonoBehaviour
         // level up?
     }
 
+    // private void LoadCharacter()
+    // {
+    //     lade Spieler
+    //     lade Fähigkeiten und Stats aus CharacterStatsManager 
+    // }
+
+    // private void LoadRandomEnemies()
+    // {
+    //     erzeuge zufällige Gegner (evtl. aus Liste)
+    //     lade Fähigkeiten und Stats aus CharacterStatsManager
+    // }
+
+    // private void LoadItems()
+    // {
+    //     lade Liste von Inventar/ Items 
+    // }
+
+    // private void BackgroundImage Music UI()
+    // {
+    //     lade Image Music UI 
+    // }
+
 }
+
