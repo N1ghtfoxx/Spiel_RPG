@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class FightManager : MonoBehaviour
 {
-    // kann von überall zugreifen aber nur hier bearbeiten
     public static FightManager Instance { get; private set; }
     [Range(0, 100), SerializeField] private int chanceToEncounter;
     [SerializeField] GameObject fightCanvas; 
@@ -47,36 +46,55 @@ public class FightManager : MonoBehaviour
     {
         isFightActive = true;
         fightCanvas.SetActive(isFightActive);
-        // load chars
-        // LoadCharacter();
-        // load random enemies
-        // LoadRandomEnemies();
-        // load items
-        // LoadItems();
-        // load backgroundImages
-        // load music
-        // load UI
-        // LoadBackgroundImage Music UI();
+        var rectTransform = fightCanvas.GetComponentsInChildren<RectTransform>()[1];
+        rectTransform.localPosition = Vector3.up * 1200f; // move the canvas out of the screen      
 
-        /* while(transition) {
-         * 
-         * DoStuff();
-         * yield return new WaitForEndOfFrame();
-         * 
-         *  }*/
+        while (rectTransform.localPosition.y > 0) {
+
+            rectTransform.Translate(Vector3.down * Time.deltaTime * 100f);
+            yield return new WaitForEndOfFrame();
+         
+         }
+
+        rectTransform.localPosition = Vector3.zero; // move the canvas to the center of the screen
+
+        // load chars
+            // LoadCharacter();
+        // load random enemies
+            // LoadRandomEnemies();
+        // load items
+            // LoadItems();
+        // load backgroundImages
+                // LoadBackgroundImage();
+        // load music
+            // LoadMusic();
+        // load UI
+            // LoadUI();
+
 
         while (isFightActive)
         {
             // check whos turn 
-            // make players/ enemies turn   
+                // bool isPlayerTurn = true; // or false
+                // if (isPlayerTurn)
+                // characterController.PlayerTurn();
+                // else 
+                // characterController.EnemyTurn();
+            // Zugwechsel
+            // check if fight is over
             // show and wait for end of fight   
             // set isFightActive to false <- GameOver? enemies are dead?
+                // if CheckEnemiesDefeated() || CheckPlayerDefeated()
             yield return new WaitForSeconds(3f);
             isFightActive = false; // because: nobody got time for this
         }
 
         // End the fight an gain XP an gold
+            // xpGain
+            // goldGain
         // level up?
+            // PlayerStatsManager.UpdateStats();
+            // Level++;
         fightCanvas.SetActive(isFightActive);
         characterController.PausePlayer(isFightActive);
 
@@ -99,7 +117,7 @@ public class FightManager : MonoBehaviour
     //     lade Liste von Inventar/ Items 
     // }
 
-    // private void BackgroundImage Music UI()
+    // private void LoadBackgroundImage /Music/ UI() //für jedes Element einzelne Methode!
     // {
     //     lade Image Music UI 
     // }
