@@ -1,11 +1,13 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class FightManager : MonoBehaviour
 {
     public static FightManager Instance { get; private set; }
     [Range(0, 100), SerializeField] private int chanceToEncounter;
-    [SerializeField] GameObject fightCanvas; 
+    [SerializeField] GameObject fightCanvas;
     private bool isFightActive;
     private BaseCharacterController characterController;
 
@@ -24,7 +26,7 @@ public class FightManager : MonoBehaviour
 
         isFightActive = false;
     }
-    
+
     public bool CheckForEncounter(BaseCharacterController characterController)
     {
         this.characterController = characterController;
@@ -37,7 +39,7 @@ public class FightManager : MonoBehaviour
 
     /// This method is called when the player enters a fight encounter
     private void StartFight()
-        
+
     {
         StartCoroutine(FightCoroutine());
     }
@@ -49,78 +51,122 @@ public class FightManager : MonoBehaviour
         var rectTransform = fightCanvas.GetComponentsInChildren<RectTransform>()[1];
         rectTransform.localPosition = Vector3.up * 1200f; // move the canvas out of the screen      
 
-        while (rectTransform.localPosition.y > 0) {
+        while (rectTransform.localPosition.y > 0)
+        {
 
             rectTransform.Translate(Vector3.down * Time.deltaTime * 100f);
             yield return new WaitForEndOfFrame();
-         
-         }
+
+        }
 
         rectTransform.localPosition = Vector3.zero; // move the canvas to the center of the screen
 
+        // Manage with SpawnManager!
         // load chars
-            // LoadCharacter();
+        // LoadCharacters();
+
         // load random enemies
-            // LoadRandomEnemies();
+
         // load items
-            // LoadItems();
+        // LoadItems();
+
+        // TODO
         // load backgroundImages
-                // LoadBackgroundImage();
+        // LoadBackgroundImage();
+
         // load music
-            // LoadMusic();
+        // LoadMusic();
+
         // load UI
-            // LoadUI();
+        // LoadUI();
 
+        // Fight-Loop
+        //  bool PlayerTurn = true;
+        //  while (isFightActive)
+        //  {
+        //      check whos turn 
+        //      if (PlayerTurn)
+        //      {
+        //          characterController.PlayerTurn();
+        //      }
+        //      else
+        //      {
+        //          characterController.EnemyTurn();
+        //      }
 
-        while (isFightActive)
-        {
-            // check whos turn 
-                // bool isPlayerTurn = true; // or false
-                // if (isPlayerTurn)
-                // characterController.PlayerTurn();
-                // else 
-                // characterController.EnemyTurn();
-            // Zugwechsel
-            // check if fight is over
-            // show and wait for end of fight   
-            // set isFightActive to false <- GameOver? enemies are dead?
-                // if CheckEnemiesDefeated() || CheckPlayerDefeated()
-            yield return new WaitForSeconds(3f);
-            isFightActive = false; // because: nobody got time for this
-        }
+        // after every turn check if fight is over
+        // if (CheckEnemiesDefeated() || CheckPlayerDefeated())
+        //     {
+        //          ShowEndOfFightUI();
+        //          yield return new WaitForSeconds(3f);
+        //          isFightActive = false;
+        //     }
+        //  }
 
         // End the fight an gain XP an gold
-            // xpGain
-            // goldGain
-        // level up?
-            // PlayerStatsManager.UpdateStats();
-            // Level++;
-        fightCanvas.SetActive(isFightActive);
-        characterController.PausePlayer(isFightActive);
+        // GainRewards();
+        // characterController.PausePlayer(isFightActive);
+        // fightCanvas.SetActive(isFightActive);
+
 
     }
 
-    // private void LoadCharacter()
-    // {
-    //     lade Spieler
-    //     lade Fähigkeiten und Stats aus CharacterStatsManager 
-    // }
+    /* check, if all enemies are defeated
+     * bool CheckEnemiesDefeated()
+     * {
+     *     foreach (Character e in enemies)
+     *     {
+     *         if(e.Health > 0) return false;
+     *     }
+     *     return true;
+     * }
+     */
 
-    // private void LoadRandomEnemies()
-    // {
-    //     erzeuge zufällige Gegner (evtl. aus Liste)
-    //     lade Fähigkeiten und Stats aus CharacterStatsManager
-    // }
+    /* check, if player is defeated
+     * bool CheckPlayerDefeated()
+     * {
+     *     return player.Health <= 0;
+     * }
+     */
 
-    // private void LoadItems()
-    // {
-    //     lade Liste von Inventar/ Items 
-    // }
+    /* show end of fight UI
+     * void ShowEndOfFightUI()
+     * {
+     *     if(CheckPlayerDefeated())
+     *     {
+     *         Debug.Log("Game Over");
+     *     }
+     *     else
+     *     {
+     *         Debug.Log("You won the fight");
+     *     }
+     * }
+     */
 
-    // private void LoadBackgroundImage /Music/ UI() //für jedes Element einzelne Methode!
-    // {
-    //     lade Image Music UI 
-    // }
-
+    /* gain rewards 
+     * void GainRewards()
+     * {
+     *     int totalXp = 0;
+     *     int totalGold = 0;
+     *     foreach (Character e in enemies)
+     *     {
+     *         totalXp += e.Level * 10;
+     *         totalGold += e.Level * 5;
+     *     }
+     *     player.Xp += totalXp;
+     *     player.Gold += totalGold;
+     *     Debug.Log("You gained: " + totalXp + " XP and " + totalGold + " Gold.");
+     *     
+     * Level-Up
+     * 
+     *     int xpToLevelUp = player.Level * 100;
+     *     if (player.Xp >= xpToLevelUp)
+     *     {
+     *          player.Level++;
+     *          Debug.Log("You leveled up! You are now level " + player.Level);
+     *      }*/
 }
+    
+
+
 
