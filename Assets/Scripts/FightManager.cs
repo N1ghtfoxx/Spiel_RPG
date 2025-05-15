@@ -61,15 +61,6 @@ public class FightManager : MonoBehaviour
 
         rectTransform.localPosition = Vector3.zero; // move the canvas to the center of the screen
 
-        // Manage with SpawnManager!
-        // load chars
-        // LoadCharacters();
-
-        // load random enemies
-
-        // load items
-        // LoadItems();
-
         // TODO
         // load backgroundImages
         // LoadBackgroundImage();
@@ -77,8 +68,6 @@ public class FightManager : MonoBehaviour
         // load music
         // LoadMusic();
 
-        // load UI
-        // LoadUI();
 
         // Fight-Loop
         //  bool PlayerTurn = true;

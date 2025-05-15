@@ -28,4 +28,12 @@ public class SpawnManager : MonoBehaviour
         Instantiate(spawnableBattleCharacters, battleCharacterSpawnPoint);
     }
 
+    // load chars
+    // LoadCharacters();
+
+    // load random enemies
+
+    // load items
+    // LoadItems();
+
 }

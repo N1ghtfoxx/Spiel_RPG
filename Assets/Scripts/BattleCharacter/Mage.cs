@@ -10,4 +10,13 @@ public class Mage : BattleCharacter
     public override void UseItem(string itemName) { }
     public override void GetDamage(int damage) { }
     public override void Heal(int healAmount) { }
+
+    public override bool LevelUp()
+    {
+        var leveled = base.LevelUp();
+
+        if (leveled) { this.Level++; }
+
+        return leveled;
+    }
 }
