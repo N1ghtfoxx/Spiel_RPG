@@ -13,6 +13,7 @@ public class BaseCharacterController : MonoBehaviour
     private bool isPlayerPaused; 
     private Vector3Int currentPosition;
     private Vector3Int lastEncounterPosition;
+    private CharacterAnimationManager cam;
 
     public Tilemap tilemap
     {
@@ -29,6 +30,7 @@ public class BaseCharacterController : MonoBehaviour
     {
         isSlowed = false;
         isPlayerPaused = false;
+        cam = GetComponent<CharacterAnimationManager>();
     }
 
     /// <summary>
@@ -38,7 +40,15 @@ public class BaseCharacterController : MonoBehaviour
     public void Movement(CallbackContext ctx)
     {
         // movmentInput is set by unity events
-        movementInput = ctx.ReadValue<Vector2>(); //comment
+        movementInput = ctx.ReadValue<Vector2>(); 
+        if  (!isPlayerPaused) 
+        {
+            cam.SetAnimatorValues(movementInput.x, movementInput.y); 
+        }
+        else
+        {
+            cam.SetAnimatorValues(0, 0); 
+        }
 
     }
 

@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 7263ba8e3d07f7c4c90dd7ca4dc14bdd
+guid: c2fa69c311e8ddd40805d213dfb292f8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Take hit_0
+      name: Jump_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db7897d5f4a0fd947bda84b0449aec54
-      internalID: -1313988079
+      spriteID: 3f49c7bb6d004cc45a3cf1daaf079f4a
+      internalID: 1124959474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Take hit_1
+      name: Jump_1
       rect:
         serializedVersion: 2
-        x: 250
+        x: 140
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 625790bf1d56305489e1227a7099fb9d
-      internalID: 965373608
+      spriteID: 1b599ccaff22d44469c900afa5d6e9c1
+      internalID: 389888454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Take hit_2
+      name: Jump_2
       rect:
         serializedVersion: 2
-        x: 500
+        x: 280
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3746a9e76085bd1418c0ba94f8afb01b
-      internalID: -73526045
+      spriteID: cc34daf7c62a46844899f31d3e22dd8b
+      internalID: 1146671751
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Take hit_0: -1313988079
-      Take hit_1: 965373608
-      Take hit_2: -73526045
+      Jump_0: 1124959474
+      Jump_1: 389888454
+      Jump_2: 1146671751
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

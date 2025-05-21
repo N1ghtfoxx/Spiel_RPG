@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 836ba81373ddf664c8a192783efe0ecd
+guid: d3cfdd35f27aa614880e6632f67f8a5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Run_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab552b4d711f43243a9a7b0c4ce7dcb6
-      internalID: -803321122
+      spriteID: 132a6f03eae5a584191d38ca57e8f9fc
+      internalID: -722977125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Run_1
       rect:
         serializedVersion: 2
-        x: 250
+        x: 140
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 669ce13575f64d640944f942723a4c4f
-      internalID: 1722800662
+      spriteID: d4f8ffae5a9dca4458dd69b80cabe185
+      internalID: -1121129403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Run_2
       rect:
         serializedVersion: 2
-        x: 500
+        x: 280
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa9ee257d97b70a45818cc5970597aa5
-      internalID: -722472064
+      spriteID: d7f6cfc7cd7bd074b9f36fffa743cb0d
+      internalID: -920671000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Run_3
       rect:
         serializedVersion: 2
-        x: 750
+        x: 420
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0023f5f2dd3e4a9469ff599f2f566636
-      internalID: -606836463
+      spriteID: 845eab7b8cd2933459f9436478c7ea01
+      internalID: -1267645450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: Run_4
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 560
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1da797089e2a2f44196725fb188a8760
-      internalID: -1332049040
+      spriteID: 64a0029dda0acde4dbcca4789e250dcd
+      internalID: 100577627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_5
+      name: Run_5
       rect:
         serializedVersion: 2
-        x: 1250
+        x: 700
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe77d2cdcc7c96249aaaaed0829ad914
-      internalID: 302371626
+      spriteID: 73819ca8fe14a8b4bb495900da2ab005
+      internalID: 993217038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_6
+      name: Run_6
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 840
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b718fb55051a023428c2d533b519c0f5
-      internalID: 1179212406
+      spriteID: 90e6d2ddf5f48094fa044c845f0fb90a
+      internalID: 164760540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_7
+      name: Run_7
       rect:
         serializedVersion: 2
-        x: 1750
+        x: 980
         y: 0
-        width: 250
-        height: 250
+        width: 140
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b13aaf2340c5e449aa17bda6d16a802
-      internalID: -936345048
+      spriteID: fde258c55b4c788429066cb0326c098a
+      internalID: -1210946897
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_0: -803321122
-      Idle_1: 1722800662
-      Idle_2: -722472064
-      Idle_3: -606836463
-      Idle_4: -1332049040
-      Idle_5: 302371626
-      Idle_6: 1179212406
-      Idle_7: -936345048
+      Run_0: -722977125
+      Run_1: -1121129403
+      Run_2: -920671000
+      Run_3: -1267645450
+      Run_4: 100577627
+      Run_5: 993217038
+      Run_6: 164760540
+      Run_7: -1210946897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
