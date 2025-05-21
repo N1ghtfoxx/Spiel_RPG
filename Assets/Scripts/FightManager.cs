@@ -61,7 +61,7 @@ public class FightManager : MonoBehaviour
 
         rectTransform.localPosition = Vector3.zero; // move the canvas to the center of the screen
 
-        // TODO
+    // TODO
         // load backgroundImages
         // LoadBackgroundImage();
 
@@ -69,7 +69,7 @@ public class FightManager : MonoBehaviour
         // LoadMusic();
 
 
-        // Fight-Loop
+    // Fight-Loop
         //  bool PlayerTurn = true;
         //  while (isFightActive)
         //  {
@@ -83,7 +83,7 @@ public class FightManager : MonoBehaviour
         //          characterController.EnemyTurn();
         //      }
 
-        // after every turn check if fight is over
+    // after every turn check if fight is over
         // if (CheckEnemiesDefeated() || CheckPlayerDefeated())
         //     {
         //          ShowEndOfFightUI();
@@ -91,16 +91,15 @@ public class FightManager : MonoBehaviour
         //          isFightActive = false;
         //     }
         //  }
-
-        // End the fight an gain XP an gold
-        // GainRewards();
-        // characterController.PausePlayer(isFightActive);
-        // fightCanvas.SetActive(isFightActive);
-
-
     }
 
-    /* check, if all enemies are defeated
+// End the fight an gain XP an gold
+// GainRewards();
+// characterController.PausePlayer(isFightActive);
+// fightCanvas.SetActive(isFightActive);
+
+
+/* check, if all enemies are defeated
      * bool CheckEnemiesDefeated()
      * {
      *     foreach (Character e in enemies)
@@ -109,16 +108,16 @@ public class FightManager : MonoBehaviour
      *     }
      *     return true;
      * }
-     */
+*/
 
-    /* check, if player is defeated
+/* check, if player is defeated
      * bool CheckPlayerDefeated()
      * {
      *     return player.Health <= 0;
      * }
-     */
+*/
 
-    /* show end of fight UI
+/* show end of fight UI
      * void ShowEndOfFightUI()
      * {
      *     if(CheckPlayerDefeated())
@@ -130,9 +129,9 @@ public class FightManager : MonoBehaviour
      *         Debug.Log("You won the fight");
      *     }
      * }
-     */
+*/
 
-    /* gain rewards 
+/* gain rewards 
      * void GainRewards()
      * {
      *     int totalXp = 0;
@@ -146,16 +145,13 @@ public class FightManager : MonoBehaviour
      *     player.Gold += totalGold;
      *     Debug.Log("You gained: " + totalXp + " XP and " + totalGold + " Gold.");
      *     
-     * Level-Up
+* Level-Up
      * 
      *     int xpToLevelUp = player.Level * 100;
      *     if (player.Xp >= xpToLevelUp)
      *     {
      *          player.Level++;
      *          Debug.Log("You leveled up! You are now level " + player.Level);
-     *      }*/
+     *     }
+*/
 }
-    
-
-
-
