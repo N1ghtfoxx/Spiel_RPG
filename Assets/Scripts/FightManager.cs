@@ -93,7 +93,7 @@ public class FightManager : MonoBehaviour
         //  }
     }
 
-// End the fight an gain XP an gold
+// End the fight and gain XP an gold
 // GainRewards();
 // characterController.PausePlayer(isFightActive);
 // fightCanvas.SetActive(isFightActive);
